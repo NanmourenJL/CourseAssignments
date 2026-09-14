@@ -1,0 +1,97 @@
+\documentclass[./测控三级项目.tex]{subfiles} % 使用 subfiles 文档类，指定主文档
+
+\begin{document}
+	\subsection{题目重述}
+		\begin{compactenum}
+			\item 能抑制题6[1]e)中的中频信号，且不影响高频信号的滤波器电路，用Multisim对滤波器的频率特性进行仿真。分析设计电路是否完成功能，并进行性能分析。
+		\end{compactenum}
+	\subsection{题目分析与实施方案}
+		\subsubsection{第一问}
+			要求设计MFB结构二阶有源带通滤波器，最常见的MFB结构二阶有源带通滤波器是由两个电容和两个电阻共同作用的二阶滤波器，因此考虑在本题使用这个电路。 \par
+			电路确定后，通过计算无源网络的传递函数，得到对应相频特性函数。将需要滤除的频率代入特性曲线的截止频率，便可以推算出对应电路参数，并根据实际情况，选用相关精度的标准阻值电阻。 \par
+			然后，使用 Multisim 软件仿真对应电路，将题 6[1]e) 中的输出信号输入搭建的MFB结构二阶有源带通滤波器上，并连接示波器。观察示波器波形，判断中频信号是否被滤除及高频信号是否被影响。\par
+		
+	
+	\subsection{理论分析与仿真}
+		\subsubsection{第一问}
+		图\ref{fig:MFB结构二阶有源带通滤波器电路}是MFB结构二阶有源带通滤波器电路。
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.45\textwidth]{MFB结构二阶有源带通滤波器电路原理图}
+			\caption{MFB结构二阶有源带通滤波器电路原理图}
+			\label{fig:MFB结构二阶有源带通滤波器电路}
+		\end{figure}\par
+		根据电路计算可得：
+		\begin{align}
+			\begin{dcases}
+				\frac{v_i-v_a}{R_1}=\frac{v_a-v_o}{\frac{1}{C_1s}}+\frac{v_a-0}{\frac{1}{C_2s}}\\
+				\frac{v_a-0}{\frac{1}{C_2s}}=\frac{0-v_o}{R_2}
+			\end{dcases}
+		\end{align}\par
+		整理后，可得MFB结构二阶有源带通滤波器电路的传递函数为：
+		\begin{align}
+			G(s)=\frac{v_o}{v_i}=-\frac{R_2C_2s}{R_1C_1R_2C_2s^2+(R_1C_1+R_1C_2)s+1}
+		\end{align}\par
+		令$s=j\omega$，并将其表示为归一化形式，可得：
+		\begin{align}
+			G(j\omega)&=-\frac{j\omega R_2C_2}{1-\omega^2 R_1C_1R_2C_2+j\omega(R_1C_1+R_1C_2)}\\
+			&=H_0\frac{(j\omega/\omega_0)/Q}{1-(\omega/\omega_0)^2+(j\omega/\omega_0)/Q}
+		\end{align}\par
+		因此归一化频率$\omega_0$、归一化增益$H_0$和归一化品质因数$Q$，满足：
+		\begin{gather}
+			\begin{dcases}
+				H_0=-\frac{R_2C_2}{R_1C_2+R_1C_1}	\\
+				\omega_0 =\frac{1}{\sqrt{R_1C_1R_2C_2}}		\\
+				Q =	\frac{\sqrt{R_1C_1R_2C_2}}{R_1C_1+R_1C_2}
+			\end{dcases}
+		\end{gather}\par
+		为了方便参数计算，以下采用等值元件法简化。令$C_1=C_2=C$，则归一化方程组可化为：
+		\begin{gather}
+			\begin{dcases}
+				H_0=-2Q^2	\\
+				\omega_0 =\frac{1}{\sqrt{R_1R_2}C}		\\
+				Q =	\frac{1}{2}\sqrt{\frac{R_2}{R_1}}
+			\end{dcases}
+			\label{eq:MFB结构二阶有源带通滤波器截止频率}
+		\end{gather}\par
+		以上理论完备，在Multisim软件中进行仿真实验。\par
+		由于需要滤除的低频信号为200Hz，高频信号为1kHz，需要保留的中频信号为500Hz。因此，设置中心频率为$f_0=500$Hz，归一化增益$H_0=1$。\par
+		设置电容容值为$C=1$nF(Standeard Value,$5\%$)\par
+		根据式\ref{eq:MFB结构二阶有源带通滤波器截止频率}，电阻阻值$R_1=225.079079$k$\Omega$、$R_2=450.158158$k$\Omega$，与标准电阻值表比对后，实际选用电阻阻值为$R_1=226$k$\Omega$(Standeard Value,$1\%$)、$R_2=453$k$\Omega$(Standeard Value,$1\%$)的电阻。\par
+		将要求的信号接入该电路，得到仿真电路图，如图\ref{fig:MFB结构二阶有源带通滤波器仿真原理图}所示。
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.45\textwidth]{./15.第十五题示波器现象/15仿真原理图}
+			\caption{MFB结构二阶有源带通滤波器仿真原理图}
+			\label{fig:MFB结构二阶有源带通滤波器仿真原理图}
+		\end{figure}\par
+		对输入和输出信号做傅里叶变换，得到对应频谱曲线，如图\ref{fig:仿真MFB结构二阶有源带通滤波器频谱曲线}所示。
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.45\textwidth]{./15.第十五题示波器现象/15仿真频率曲线}
+			\caption{仿真MFB结构二阶有源带通滤波器频谱曲线}
+			\label{fig:仿真MFB结构二阶有源带通滤波器频谱曲线}
+		\end{figure}\par
+		对于低频信号（200Hz正弦信号），幅值从0.399981降到了0.224888，可求得增益为$A=20\lg(\frac{0.224888}{0.399981})=-5.001461594$dB；对于中频信号（500Hz正弦信号），幅值从0.399934降到了0.400802，可求得增益为$A=20\lg(\frac{0.400802}{0.399934})=0.0188310633$dB；对于高频信号（1kHz正弦信号），幅值从0.0999415降到了0.0682788，可求得增益为$A=20\lg(\frac{0.0682788}{0.0999415})=-3.309199672$dB。\par
+		这说明图\ref{fig:MFB结构二阶有源带通滤波器电路}的带通滤波器可以对高频信号和低频信号进行滤波操作。
+	
+	\subsection{结论与收获}
+		\subsubsection{结论}
+		经验证，所设计MFB结构二阶有源带通滤波器基本满足题目要求，能够对中频信号进行过滤，略有误差但在允许范围之内。
+		\subsubsection{收获}：
+		\textbf{游寅龙}：\par
+		理论分析层面：完成了对电路元件的计算，掌握了相关频率特性的数学推导方法，学会了根据给定的电路功能需求来确定滤波器的关键参数计算。\par
+		动手实践层面：对仿真有争议的结果进行了验证，能够快速找出仿真时存在的问题，对于Multsim的使用更加熟练。\par
+		精神层面：面对复杂的计算时，能够由浅入深逐步拆解问题并分部分解决，培养了严谨的科学精神和解决问题的独特方法。\par
+		\textbf{郭嘉媛}：\par
+		理论分析层面：主要负责了电路原理图部分，通过查找资料，梳理了自己对二阶滤波器的知识体系。\par
+		动手实践层面：对Multsim的仿真结果进行了总结和整理，能够发现仿真时结果出现的错误，可以将自己的知识用于实践中。\par
+		精神层面：面对仿真结果与预期不符时，没有轻易放弃，而是冷静分析、深入排查问题根源，培养了耐心和专注的精神。\par
+		\textbf{郑嘉宁}：\par
+		理论分析层面：对电路元件计算的结果进行了验证，深入理解了相关的数学推导方法，对知识的理解更深一步。\par
+		动手层面：对测算的结果进行了Multsim仿真，在仿真出现问题时能够自行进行排查，对软件的熟练度大大提高。\par
+		精神层面：通过团队合作解决了出现的问题，增强了个人的归属感和责任感，坚定了以后努力工作的决心。
+		
+	
+	
+\end{document}
