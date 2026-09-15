@@ -1,0 +1,11 @@
+\frametitle{Verbatim}
+^^I\begin{example}[Theorem Slide Code]
+^^I^^I\begin{verbatim}
+^^I^^I^^I%\begin{frame}
+^^I^^I^^I^^I\frametitle{Theorem}
+^^I^^I^^I^^I\begin{theorem}[Mass--energy equivalence]
+^^I^^I^^I^^I^^I$E = mc^2$
+^^I^^I^^I^^I\end{theorem}
+^^I^^I^^I%\end{frame}
+^^I^^I\end{verbatim}
+^^I\end{example}
