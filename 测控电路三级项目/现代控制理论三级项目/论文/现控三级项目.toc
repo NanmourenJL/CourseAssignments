@@ -1,0 +1,15 @@
+\contentsline {section}{\numberline {1}前言}{2}{section.1}%
+\contentsline {section}{\numberline {2}系统分析与模型建立}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}系统分析}{2}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}一维倒立摆系统的物理模型}{2}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}系统运动学模型的建立：空间表达式的建立}{3}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}系统稳定性和能控能观性分析}{4}{subsubsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.2}倒立摆控制律设计}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}系统仿真}{7}{subsection.2.3}%
+\contentsline {section}{\numberline {3}心得体会}{11}{section.3}%
+\contentsline {paragraph}{理论与实践的结合}{11}{paragraph*.18}%
+\contentsline {paragraph}{系统稳定性与控制的精细调节}{11}{paragraph*.19}%
+\contentsline {paragraph}{仿真工具的使用与提升}{12}{paragraph*.20}%
+\contentsline {paragraph}{问题解决与创新能力的培养}{12}{paragraph*.21}%
+\contentsline {paragraph}{团队合作与沟通的意义}{12}{paragraph*.22}%
+\contentsline {paragraph}{工程实践与全面发展的启示}{12}{paragraph*.23}%
