@@ -1,0 +1,152 @@
+\documentclass{ctexart}
+\usepackage{palatino}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{titlesec} %自u格式的宏包
+\usepackage{picinpar,graphicx}
+\usepackage{zhnumber}
+\usepackage{float}
+\usepackage{caption,subcaption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}%页眉页脚
+\usepackage{multirow}
+\usepackage{upgreek}
+\usepackage{paralist}
+\usepackage{diagbox,array}
+\usepackage{cite}
+\usepackage{minted}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{verbatim}
+\usepackage{supertabular}
+\usepackage{subfiles}
+\usepackage{siunitx} 
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{pgfplots} 
+\usepackage{circuitikz}
+\usetikzlibrary{arrows.meta, positioning, shapes.symbols}
+\usepackage{hologo}
+\usepackage[super]{gbt7714}
+
+\newCJKfontfamily{\cusong}[AutoFakeBold={2.17}]{SimSun}
+\newCJKfontfamily{\cuhei}[AutoFakeBold={3.17}]{SimHei}
+\geometry{a4paper,left=2.4cm,right=2cm,top=2.5cm,bottom=2cm} %页边距
+
+\lstset{
+	basicstyle=\ttfamily, % 设置字体族
+	breaklines=true, % 自动换行
+	keywordstyle=\bfseries, % 设置关键字为粗体，颜色为 NavyBlue
+	morekeywords={}, % 设置更多的关键字，用逗号分隔
+	emph={self}, % 指定强调词，如果有多个，用逗号隔开
+	emphstyle=\bfseries\color{Rhodamine}, % 强调词样式设置
+	commentstyle=\itshape\color{black!50!white}, % 设置注释样式，斜体，浅灰色
+	stringstyle=\bfseries\color{PineGreen!90!black}, % 设置字符串样式
+	columns=flexible,
+	numbers=left, % 显示行号在左边
+	numbersep=2em, % 设置行号的具体位置
+	numberstyle=\footnotesize % 缩小行号
+}
+
+
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+\counterwithin{equation}{section}
+
+\renewcommand{\thefigure}{ \arabic{section}-\arabic{figure}}
+\renewcommand{\theequation}{ \arabic{section}-\arabic{equation}}
+\renewcommand{\thetable}{ \arabic{section}-\arabic{table}}
+\renewcommand \thesubsection {\arabic{section}.\arabic{subsection}.}
+\renewcommand \thesection {第\zhnum{section}章}
+\renewcommand \thesubsubsection{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.}
+\renewcommand{\caption}[1]{\caption[\songti\ziju{-5}]{#1}}
+%\\totalnumber{10}
+\renewcommand{\thesubfigure}{\arabic{subfigure}}
+
+\titleformat{\section}[block]{\cusong\zihao{3}}{\arabic{section}}{1em}{}[]
+\titleformat{\subsection}[block]{\heiti\zihao{4}\linespread{1}}{\arabic{section}.\arabic{subsection}}{1em}{}[]
+\titleformat{\subsubsection}[block]{\songti\zihao{4}\linespread{1}}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}{1em}{}[]
+\titleformat{\paragraph}[block]{\songti\zihao{-4}}{(\arabic{paragraph})}{1em}{}[]
+
+\setlength{\baselineskip}{20pt}
+
+
+\pagenumbering{arabic}
+
+\setlength{\parskip}{0.1pt}
+
+
+\pagestyle{fancy}%清除原页眉页脚样式
+\fancyhf{} 
+\thispagestyle{empty}
+\renewcommand\headrulewidth{0pt} 
+%\rhead[C]{\centering \zihao{5} \songti 传感器与单片机应用综合实践\quad\quad 课程设计说明书}
+\rfoot[C]{\thepage}
+
+
+\makeatletter
+\def\@cite#1#2{\textsuperscript{[#1\if@tempswa, #2\fi]}}
+\makeatother
+
+\begin{document}
+	\section{片段1}
+		选自脑电信号伪迹去除及基本特征节律提取处理算法的研究\cite{脑电信号伪迹去除及基本特征节律提取处理算法的研究}
+		\subsection{自适应滤波器构造}
+			传统的滤波器系数是确定的，此处使用自适应滤波器来针对50Hz工频干扰进行处理。\par
+			其中$x(n)$是输入信号，$y(n)$是输出信号，$d(n)$是参考信号，$e(n)$是误差信号。\par
+			
+			自适应滤波器是由参数可调的数字滤波器或称为自适应处理器和自适应算法两部分组成，参数可调的数字滤波器可以是无限冲击响应数字滤波器IIR或有限冲击响应数字滤波器FIR，还可以是格型数字滤波器。\par
+			各信号关系为：
+			\begin{gather}
+				\begin{cases}
+					e(n)=d(n)-y(n)\\
+					y(n)=Filter[x(n),w(n)]\\
+					\bm{W}(n+1)=\bm{W}(n)+e(n)x(n)
+				\end{cases}
+			\end{gather}
+			滤波器的输出表示为：
+			\begin{gather}
+				y(n)=\bm{W}^\top(n)\bm{X}(n)=\sum_{i=0}^{N-1}w_i(n)x(n-i)
+			\end{gather}
+			滤波器相当于是一个$N$点的可变系数滑动窗口。\par
+			假设参考信号$d$为有效信号$s$和噪声$k$叠加而成；输入的噪声信号为$x$，它与有效信号$s$无关，且与参考噪声$k$相关。$x$经过自适应滤波器后输出$y$。\par
+			系统误差$\epsilon$为：
+			\begin{gather}
+				\epsilon=s+k-y
+			\end{gather}
+			将上式两边平方后得：
+			\begin{gather}
+				\epsilon^2=s^2+(k-y)^2+2s(k-y)
+			\end{gather}
+			各取数学期望值，因为$s$与$k$和$y$不相关，因此$\mathbb{E}[s(k-y)]=0$，所以有：
+			\begin{align}
+				\mathbb{E}[\epsilon^2]&=\mathbb{E}[s^2]+\mathbb{E}[(k-y)^2]+2\mathbb{E}[s(k-y)]\\
+				&=\mathbb{E}[s^2]+\mathbb{E}[(k-y)^2]
+			\end{align}
+			当条件滤波参数使得$\mathbb{E}[\epsilon^2]$最小化时，不希望有效信号能量$\mathbb{E}[s^2]$受到损失，从而就应当使$\mathbb{E}[(k-y)^2]$项最小化，即：
+			\begin{gather}
+				\mathbb{E}_{min}[\epsilon^2]=\mathbb{E}[s^2]+\mathbb{E}_{min}[(k-y)^2]
+			\end{gather}
+			因此滤波器的设计应当
+			
+	
+	\newpage
+	\zihao{5}
+	\bibliographystyle{gbt7714-numerical}
+	\bibliography{tex}
+	\newpage
+	
+	
+	
+\end{document}
+
+
+
+

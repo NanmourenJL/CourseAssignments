@@ -1,0 +1,123 @@
+\begin{thebibliography}{16}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax\else
+  \urlstyle{same}\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \DeclareUrlCommand\doi{\urlstyle{rm}}
+  \def\eprint#1#2{#2}
+\else
+  \def\doi#1{\href{https://doi.org/#1}{\nolinkurl{#1}}}
+  \let\eprint\href
+\fi
+
+\bibitem[黎芳成(2023)]{基于SSVEP脑电智能轮椅的研究与试验}
+黎芳成.
+\newblock 基于SSVEP脑电智能轮椅的研究与试验\allowbreak[D].
+\newblock 重庆理工大学, 2023.
+
+\bibitem[伏云发\ 等(2021)伏云发, 丁鹏, 苏磊, 赵磊, 杨俊, and
+  周建华]{国内外脑电分析处理软件现状分析及发展趋势}
+伏云发, 丁鹏, 苏磊, 等.
+\newblock
+  国内外脑电分析处理软件现状分析及发展趋势\allowbreak[J].
+\newblock 昆明理工大学学报（自然科学版）, 2021, 46\allowbreak
+  (1): 54-67.
+
+\bibitem[魏琳\ 等(2004)魏琳, 沈模卫, 张光强, and
+  施壮华]{EEG波形伪迹去除方法}
+魏琳, 沈模卫, 张光强, 等.
+\newblock EEG波形伪迹去除方法\allowbreak[J].
+\newblock 应用心理学, 2004, 10\allowbreak (3): 47-52.
+
+\bibitem[袁琦(2014)]{癫痫脑电的分类识别及自动检测方法研究}
+袁琦.
+\newblock 癫痫脑电的分类识别及自动检测方法研究\allowbreak[D].
+\newblock 山东大学, 2014.
+
+\bibitem[李瑞凯(2023)]{无线高通量脑电信号采集关键技术及其在脑机接口中的应用研究}
+李瑞凯.
+\newblock
+  无线高通量脑电信号采集关键技术及其在脑-机接口中的应用研究\allowbreak[D].
+\newblock 河北大学, 2023.
+
+\bibitem[Hou et~al.(2016)Hou, Morgan, Tucker, Konyn, Poulsen, Tanaka, Anderson,
+  and Luu]{一种改进的高维脑电伪影去除方法}
+HOU J, MORGAN K, TUCKER D~M, et~al.
+\newblock An improved artifacts removal method for high dimensional
+  eeg\allowbreak[J].
+\newblock Journal of Neuroscience Methods, 2016, 268: 31-42.
+
+\bibitem[裴立力\ 等(2012)裴立力, 李洪谊, and
+  伏云发]{视觉反馈人体姿态镇定作用的布朗运动模型分析}
+裴立力, 李洪谊, 伏云发.
+\newblock
+  视觉反馈人体姿态镇定作用的布朗运动模型分析\allowbreak[J].
+\newblock 医用生物力学, 2012, 27\allowbreak (4): 444-450.
+
+\bibitem[熊馨\ 等(2021)熊馨, 杨秋红, 周建华, 徐保磊, 李永程,
+  尹旭贤, and 伏云发]{脑机融合控制中脑电伪迹处理方法}
+熊馨, 杨秋红, 周建华, 等.
+\newblock 脑机融合控制中脑电伪迹处理方法\allowbreak[J].
+\newblock 昆明理工大学学报（自然科学版）, 2021, 46\allowbreak
+  (3): 56-70.
+
+\bibitem[姚娟娟\ 等(2020)姚娟娟, 路堃, 马兴宇, and
+  成工]{基于脑电和眼电的疲劳检测方法的研究}
+姚娟娟, 路堃, 马兴宇, 等.
+\newblock 基于脑电和眼电的疲劳检测方法的研究\allowbreak[J].
+\newblock 电子设计工程, 2020, 28\allowbreak (6): 115-120.
+
+\bibitem[邵婷婷\ 等(2014)邵婷婷 and
+  申黎明]{基于脑电(EEG)的椅式按摩位置对按摩舒适性影响的研究}
+邵婷婷, 申黎明.
+\newblock
+  基于脑电(EEG)的椅式按摩位置对按摩舒适性影响的研究\allowbreak[J].
+\newblock 安徽农业大学学报, 2014, 41\allowbreak (2): 338-341.
+
+\bibitem[周湘(2019)]{基于深度学习的高铁驾驶员EEG警觉度检测方法研究}
+周湘.
+\newblock
+  基于深度学习的高铁驾驶员EEG警觉度检测方法研究\allowbreak[D].
+\newblock 西南交通大学, 2019.
+
+\bibitem[张明强\ 等(2015)张明强, 周志强, and
+  杨建军]{大脑认知过程Gamma节律模式及起源机制}
+张明强, 周志强, 杨建军.
+\newblock
+  大脑认知过程Gamma节律模式及起源机制\allowbreak[C]//\allowbreak
+中国中西医结合麻醉学会年会暨第二届全国中西医结合麻醉学术研讨会论文集.
+\newblock 江苏扬州, 2015: 766-768.
+
+\bibitem[张瑞\ 等(2006)张瑞 and
+  杨铁军]{自适应信号处理技术的应用}
+张瑞, 杨铁军.
+\newblock 自适应信号处理技术的应用\allowbreak[J].
+\newblock 现代电子技术, 2006, 29\allowbreak (17): 7-8,11.
+
+\bibitem[杨红\ 等(2005)杨红 and
+  李生明]{自适应滤波器在噪声对消中的应用}
+杨红, 李生明.
+\newblock 自适应滤波器在噪声对消中的应用\allowbreak[J].
+\newblock 长江工程职业技术学院学报, 2005, 22\allowbreak (4):
+  55-56,74.
+
+\bibitem[Yan et~al.(2009)Yan, Miyamoto, and
+  Jiang]{用于瞬态振动响应分析的频率切片小波变换}
+YAN Z, MIYAMOTO A, JIANG Z.
+\newblock Frequency slice wavelet transform for transient vibration response
+  analysis\allowbreak[J/OL].
+\newblock Mechanical Systems and Signal Processing, 2009, 23\allowbreak (5):
+  1474-1489.
+\newblock
+  \url{https://www.sciencedirect.com/science/article/pii/S0888327009000120}.
+\newblock DOI: \doi{https://doi.org/10.1016/j.ymssp.2009.01.008}.
+
+\bibitem[张涛\ 等(2016)张涛, 陈万忠, and
+  李明阳]{基于频率切片小波变换和支持向量机的癫痫脑电信号自动检测}
+张涛, 陈万忠, 李明阳.
+\newblock
+  基于频率切片小波变换和支持向量机的癫痫脑电信号自动检测\allowbreak[J].
+\newblock 物理学报, 2016, 65\allowbreak (3): 038703-1-038703-7.
+
+\end{thebibliography}
